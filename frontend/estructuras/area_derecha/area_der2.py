@@ -13,5 +13,21 @@ area_der2= dbc.Container([
         html.Label(id = 'respuestaQ'),
     ]),
 
+    html.Div([
+        html.Label('Pérdida por fricción (Hf):   '),
+        html.Label(id = 'respuestaHF'),
+    ]),
+
+    html.Div([
+        html.Label('Pérdida local (Hl):   '),
+        html.Label(id = 'respuestaHL'),
+    ]),
+
+    html.Div([
+        html.Label('Coeficiente de fricción (f):   '),
+        html.Label(id = 'respuestaF'),
+    ]),
+
+
     
 ])
