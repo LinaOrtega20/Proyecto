@@ -7,8 +7,9 @@ from .estructuras.derecha import derecha
 
 layout = dbc.Container([
     dbc.Row([
-        dbc.Col(izquierda,md=8,style={'background-color':'red'}),
-        dbc.Col(derecha,md=4,style={'background-color':'black'}),
+        dbc.Col('Diseño de tuberías',md=12,style={'background-color':'red'}),
+        dbc.Col(izquierda,md=6,style={'background-color':'red'}),
+        dbc.Col(derecha,md=6,style={'background-color':'black'}),
     ])
 
 ])
