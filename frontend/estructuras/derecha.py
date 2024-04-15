@@ -4,12 +4,13 @@ from dash import html
 
 
 #importamos las áreas de trabajo
-from .area_derecha.area_der1 import area_der1
-from .area_derecha.area_der2 import area_der2
+from .area_derecha.area_der import area_der
+
 
 derecha = dbc.Container([
     dbc.Row([
-        dbc.Col(area_der1,md=7,style={'background-color':'green'}),
-        dbc.Col(area_der2,md=5,style={'background-color':'write'}),
+        dbc.Col("Iteración",md=12,style={'background-color':'green'}),
+        dbc.Col(area_der,md=12,style={'background-color':'#90EE90'}),
+        #dbc.Col(area_der,md=5,style={'background-color':'#90EE90'}),
     ])
 ])
