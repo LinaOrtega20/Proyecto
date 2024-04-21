@@ -12,7 +12,7 @@ derecha = dbc.Container([
     dbc.Row([
         dbc.Col("Iteración",md=12,style={'background-color':'green'}),
         dbc.Col(area_der1,md=12,style={'background-color':'#90EE90'}),
-        dbc.Col("Output",md=12,style={'background-color':'green'}),
+        dbc.Col("Resultado",md=12,style={'background-color':'green'}),
         dbc.Col(area_der2,md=12,style={'background-color':'#90EE90'}),
     ])
 ])
