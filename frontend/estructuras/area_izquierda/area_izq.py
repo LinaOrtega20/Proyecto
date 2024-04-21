@@ -6,12 +6,12 @@ area_izq= dbc.Container([
     html.Div([
     html.Label('Díametro (m):   '),
     html.Label('________________', style={'color': '#90EE90'}),
-    dcc.Input(id = 'Díametro', value = 0.5 , type = 'number', step=0.1),
+    dcc.Input(id = 'Díametro', value = 0.32 , type = 'number', step=0.01),
     ]),
     html.Div([
     html.Label('Longitud tubería (m):   '),
     html.Label('________________', style={'color': '#90EE90'}),
-    dcc.Input(id = 'Longitud:', value = 314.9 , type = 'number', step=0.1),
+    dcc.Input(id = 'Longitud', value = 314.9 , type = 'number', step=0.1),
     ]),
     html.Div([
     html.Label('Rugosidad (m):   '),

@@ -15,7 +15,7 @@ area_der2= dbc.Container([
 
     html.Div([
         html.Label('Pérdida por fricción (Hf):   '),
-        html.Label(id = 'respuestaHF'), #Este resultado va con formulas complejas, por lo tanto se haran con un backend más adelante
+        html.Label(id = 'respuestaPF'), #Este resultado va con formulas complejas, por lo tanto se haran con un backend más adelante
     ]),
 
     html.Div([
