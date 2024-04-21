@@ -12,6 +12,8 @@ from frontend.frontend import layout
 from backend.velocidad import velocidad
 from backend.caudal import caudal
 from backend.Hf import Hf
+from backend.Hl import Hl
+from backend.coeficientef import coeficientef
 
 app.layout = layout
 
@@ -21,7 +23,7 @@ app.layout = layout
     Input('Longitud', 'value'),
     Input('Rugosidad', 'value'),
     Input('Viscosidad', 'value'),
-    Input('respuestaHF', 'value')
+    Input('respuestaHF', 'value'),
 )
 
 def OperacionVelocidad(Díametro, Longitud, Rugosidad, Viscosidad, respuestaHF):
@@ -31,7 +33,7 @@ def OperacionVelocidad(Díametro, Longitud, Rugosidad, Viscosidad, respuestaHF):
 @app.callback(
     Output('respuestaQ', 'children'),
     Input('Díametro', 'value'),
-    Input('respuestaV', 'children')
+    Input('respuestaV', 'children'),
 )
 
 def OperacionCaudal(Díametro, respuestaV):
@@ -47,6 +49,27 @@ def OperacionHf(respuestaHF):
     resultadoHf = Hf(respuestaHF)
     return float(resultadoHf)
 
+@app.callback(
+    Output('respuestaHL', 'children'),
+    Input('respuestaPF', 'children'),
+    Input('PérdidaCarga', 'value'),
+)
+
+def OperacionHl(respuestaPF, PérdidaCarga):
+    resultadoHl = Hl(respuestaPF, PérdidaCarga)
+    return float(resultadoHl)
+
+@app.callback(
+    Output('respuestaF', 'children'),
+    Input('respuestaHF', 'value'),
+    Input('Díametro', 'value'),
+    Input('Longitud', 'value'),
+    Input('respuestaV', 'children'),
+)
+
+def OperacionCoeficientef(respuestaHF, Díametro, Longitud, respuestaV):
+    resultadoCoeficientef = coeficientef(respuestaHF, Díametro, Longitud, respuestaV)
+    return float(resultadoCoeficientef)
 
 if __name__ == '__main__':
     app.run_server(debug=True)
