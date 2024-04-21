@@ -11,6 +11,7 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 from frontend.frontend import layout
 from backend.velocidad import velocidad
 from backend.caudal import caudal
+from backend.Hf import Hf
 
 app.layout = layout
 
@@ -36,6 +37,16 @@ def OperacionVelocidad(Díametro, Longitud, Rugosidad, Viscosidad, respuestaHF):
 def OperacionCaudal(Díametro, respuestaV):
     resultadoCaudal = caudal(Díametro, respuestaV)
     return float(resultadoCaudal)
+
+@app.callback(
+    Output('respuestaPF', 'children'),
+    Input('respuestaHF', 'value'),
+)
+
+def OperacionHf(respuestaHF):
+    resultadoHf = Hf(respuestaHF)
+    return float(resultadoHf)
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)
