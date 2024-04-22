@@ -9,9 +9,7 @@ from .area_izquierda.area_izq import area_izq
 
 izquierda = dbc.Container([
     dbc.Row([
-        dbc.Col("Input",md=12,style={'background-color':'green'}),
+        dbc.Col("Input",md=12,style={'background-color':'#66CD66'}),
         dbc.Col(area_izq,md=12,style={'background-color':'#90EE90'}),
-        dbc.Col("Funcion Objetivo",md=12,style={'background-color':'green'}),
-        # Luego se insertara imagen con la formula de la función 
     ])
 ])

@@ -10,9 +10,9 @@ from .area_derecha.area_der2 import area_der2
 
 derecha = dbc.Container([
     dbc.Row([
-        dbc.Col("Iteración",md=12,style={'background-color':'green'}),
+        dbc.Col("Iteración",md=12,style={'background-color':'#66CD66'}),
         dbc.Col(area_der1,md=12,style={'background-color':'#90EE90'}),
-        dbc.Col("Resultado",md=12,style={'background-color':'green'}),
+        dbc.Col("Resultado",md=12,style={'background-color':'#66CD66'}),
         dbc.Col(area_der2,md=12,style={'background-color':'#90EE90'}),
     ])
 ])
