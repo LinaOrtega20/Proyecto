@@ -2,9 +2,9 @@ import dash
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 from dash import html
-import math
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+
 
 
 
@@ -14,6 +14,8 @@ from backend.caudal import caudal
 from backend.Hf import Hf
 from backend.Hl import Hl
 from backend.coeficientef import coeficientef
+
+
 
 app.layout = layout
 
@@ -25,6 +27,8 @@ app.layout = layout
     Input('Viscosidad', 'value'),
     Input('respuestaHF', 'value'),
 )
+
+
 
 def OperacionVelocidad(Díametro, Longitud, Rugosidad, Viscosidad, respuestaHF):
     resultadoVelocidad = velocidad(Díametro, Longitud, Rugosidad, Viscosidad, respuestaHF)
@@ -71,10 +75,21 @@ def OperacionCoeficientef(respuestaHF, Díametro, Longitud, respuestaV):
     resultadoCoeficientef = coeficientef(respuestaHF, Díametro, Longitud, respuestaV)
     return float(resultadoCoeficientef)
 
+
+
+
 if __name__ == '__main__':
     app.run_server(debug=True)
 
 
+# Inicializa la aplicación Dash
+app = dash.Dash(__name__)
 
+# Define el diseño de la aplicación
+app.layout = dbc.Container([
+    html.H1("Imagen en una aplicación web con Dash"),
+    html.Img(src='/assets/formulas.png', style={'width': '50%'})
+], fluid=True)
 
-
+if __name__ == '__main__':
+    app.run_server(debug=True)
