@@ -8,5 +8,5 @@ def velocidad(Díametro, Longitud, Rugosidad, Viscosidad, respuestaHF):
     d = (2.51*Viscosidad)
     e = (Díametro*a)
     f = ((c/3.7)+(d/e))
-    g = b * (math.log(f,10))
+    g = round(b * (math.log(f,10)),3)
     return g

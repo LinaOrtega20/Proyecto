@@ -4,5 +4,7 @@ import math
 def caudal(Díametro, respuestaV):
     a = (respuestaV)
     b = (math.pi * (Díametro ** 2) * 0.25)
-    c = (a * b)
+    c = round(a * b,3)
     return c
+
+
