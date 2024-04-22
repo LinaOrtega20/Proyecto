@@ -15,7 +15,7 @@ layout = dbc.Container([
         # se insertara la imagen del modelo 
         dbc.Col(izquierda,md=6,style={'background-color':'#7CCD7C'}),
         dbc.Col(derecha,md=6,style={'background-color':'#7CCD7C'}),
-        dbc.Col(formulas,md=12,style={'background-color':'#7CCD7C'}),
+        dbc.Col(formulas,md=12,style={'background-color':'#7CCD7C'}), 
     ])
 
 ])

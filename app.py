@@ -81,15 +81,3 @@ def OperacionCoeficientef(respuestaHF, Díametro, Longitud, respuestaV):
 if __name__ == '__main__':
     app.run_server(debug=True)
 
-
-# Inicializa la aplicación Dash
-app = dash.Dash(__name__)
-
-# Define el diseño de la aplicación
-app.layout = dbc.Container([
-    html.H1("Imagen en una aplicación web con Dash"),
-    html.Img(src='/assets/formulas.png', style={'width': '50%'})
-], fluid=True)
-
-if __name__ == '__main__':
-    app.run_server(debug=True)
