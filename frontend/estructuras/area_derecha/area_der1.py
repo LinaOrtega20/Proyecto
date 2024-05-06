@@ -12,7 +12,7 @@ area_der1= dbc.Container([
     html.Div([
         html.Label('Pérdida por fricción (hf):   '),
         html.Label('________________', style={'color': '#90EE90'}),
-        dcc.Input(id = 'respuestaHF', value = 14.8200 , type = 'number', step=0.0001),
+        dcc.Input(id = 'respuestaHF', value = 14.821 , type = 'number', step=0.001),
     ]),
     
 ])
