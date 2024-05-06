@@ -2,6 +2,7 @@ import dash
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 from dash import html
+from scipy.optimize import bisect
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -10,6 +11,7 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 from frontend.frontend import layout
 from backend.velocidad import velocidad
+from backend.FO import FO
 from backend.caudal import caudal
 from backend.Hf import Hf
 from backend.Hl import Hl
@@ -33,6 +35,23 @@ app.layout = layout
 def OperacionVelocidad(Díametro, Longitud, Rugosidad, Viscosidad, respuestaHF):
     resultadoVelocidad = velocidad(Díametro, Longitud, Rugosidad, Viscosidad, respuestaHF)
     return float(resultadoVelocidad)
+
+
+
+@app.callback(
+    Output('respuestaFO', 'children'),
+    Input('PérdidaCarga', 'value'),
+    Input('respuestaHF', 'value'),
+    Input('Ʃk', 'value'),
+    Input('respuestaV', 'children'),
+)
+
+def OperacionFO(PérdidaCarga, respuestaHF, Ʃk, respuestaV):
+    if respuestaHF == 'respuestaHF':
+        return 0
+    else:
+        resultadoFO = FO(PérdidaCarga, respuestaHF, Ʃk, respuestaV)
+    return float(resultadoFO)
 
 @app.callback(
     Output('respuestaQ', 'children'),
